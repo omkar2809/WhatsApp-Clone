@@ -79,6 +79,7 @@ const Container = styled.div `
     }
     -ms-overflow-style: none;
     scrollbar-width: none;
+    background-color: white;
 `
 
 const Search = styled.div`

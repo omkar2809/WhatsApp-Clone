@@ -8,7 +8,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import  AttachFileIcon  from "@material-ui/icons/AttachFile"
 import Message from "./Message"
 import  InsertEmoticonIcon  from "@material-ui/icons/InsertEmoticon"
-import { Mic } from "@material-ui/icons"
+import { Mic, Send } from "@material-ui/icons"
 import { useRef, useState } from "react"
 import firebase from 'firebase'
 import getRecipientEmail from "../utils/getRecipientEmail"
@@ -132,6 +132,13 @@ function ChatScreen({chat, messages}) {
                 </IconButton>
                 <Input value={input} onChange={e => setInput(e.target.value)} />
                 <button hidden disabled={!input} type='submit' onClick={sendMessage}>Send Message</button>
+                {
+                    input.length > 0 ? (
+                        <IconButton onClick={sendMessage}>
+                            <Send />
+                        </IconButton>
+                    ) : null
+                }
                 <IconButton>
                     <Mic />
                 </IconButton>
